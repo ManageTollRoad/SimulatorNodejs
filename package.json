@@ -2,6 +2,20 @@
   "name": "simulatornodejs",
   "version": "0.0.0",
   "private": true,
-  "dependencies": {
-  }
+  "dependencies": {},
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManageTollRoad/SimulatorNodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ManageTollRoad/SimulatorNodejs/issues"
+  },
+  "homepage": "https://github.com/ManageTollRoad/SimulatorNodejs#readme",
+  "description": ""
 }
