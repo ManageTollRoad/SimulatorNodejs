@@ -1,6 +1,7 @@
 {
   "dataTopic": "new",
   "prefix": "baepvu3o-",
+  "trainTopic": "train",
   "mongoPassword": "DvirOfekEliel",
   "mongoDatabaseName": "Cluster0",
   "mongoDataDbName": "vehiclesDb",
