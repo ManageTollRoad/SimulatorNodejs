@@ -33,7 +33,7 @@ const postTrain = () => {
 }
 
 // for train make it true, for data make it false
-const isTrain = false;
+const isTrain = true;
 
 const kafkaProducer = new KafkaProducerClient(
     conf.prefix,
