@@ -11,6 +11,7 @@ const ENTER_SECTION = 3
 const EXIT_SECTION = 2
 
 const conf = readConfFile()
+const options=  conf.data
 
 const createRandomData = (vehicleId) => {
     const options = conf.data
