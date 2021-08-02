@@ -182,9 +182,17 @@ for (let i = 160; i < 200; i++) {
        data.section = options.type[EXIT_SECTION]
        data.section = options.section[fourSection]
        setTimeout(( kafkaProducer.sendMessage(conf.trainTopic, data ),3500))
+        //enter to section 5
+      data.section = options.type[ENTER_SECTION]
+      data.section = options.section[fifthSection]
+      setTimeout(( kafkaProducer.sendMessage(conf.trainTopic, data ),3600))
+      //exit from fifrh section 
+      data.section = options.type[EXIT_SECTION]
+      data.section = options.section[fifthSection]
+      setTimeout(( kafkaProducer.sendMessage(conf.trainTopic, data ),3950))
       // exit from road
       data.section = options.type[EXIT_ROAD]
-      data.section = options.section[fourSection]
+      data.section = options.section[fifthSection]
       setTimeout(( kafkaProducer.sendMessage(conf.trainTopic, data ),3980))
 }
 
