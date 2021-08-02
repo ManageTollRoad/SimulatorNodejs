@@ -53,29 +53,30 @@ const postData = () => {
     }
 }
 
-const postTrain = () => {
+const postTrain = () =>
+
+{
     console.log("Producer connected to kafka for training!");
-    
+    console.log(kafkaProducer)
 
 //enter from section one and exit from fifth section 
-    
-  
+
     for (let i = 0; i < 80; i++) {
         //enter to section one
         const data = enterOrExitSection((i + 1),oneSection,ENTER_ROAD);
-        setTimeout( kafkaProducer.sendMessage.bind(conf.trainTopic, data ),1000)
+        setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, data ),1000)
         //enter to section 2
         data.section = options.section[secondSection]
-        setTimeout(( kafkaProducer.sendMessage.bind(conf.trainTopic, data ),1500))
+        setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, data ),1500)
         //enter to section 3
         data.section = options.section[thirdSection]
-        setTimeout(( kafkaProducer.sendMessage.bind(conf.trainTopic, data ),2000))
+        setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, data ),2000)
         //enter to section 4
         data.section = options.section[fourSection]
-        setTimeout(( kafkaProducer.sendMessage.bind(conf.trainTopic, data ),3000))
+        setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, data ),3000)
         
         // exit from section 5
-        setTimeout( kafkaProducer.sendMessage.bind(conf.trainTopic, enterOrExitSection((i + 1),fifthSection,EXIT_ROAD)),4000)
+        setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, enterOrExitSection((i + 1),fifthSection,EXIT_ROAD)),4000)
     }
 
  
@@ -85,15 +86,15 @@ const postTrain = () => {
     for (let i = 80; i < 160; i++) {
          //enter to section one
         const data = enterOrExitSection((i + 1),oneSection,ENTER_ROAD);
-        setTimeout( kafkaProducer.sendMessage.bind(conf.trainTopic, data ),1000)
+        setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, data ),1000)
         //enter to section 2
         data.section = options.section[secondSection]
-        setTimeout(( kafkaProducer.sendMessage.bind(conf.trainTopic, data ),1500))
+        setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, data ),1500)
         //enter to section 3
         data.section = options.section[thirdSection]
-        setTimeout(( kafkaProducer.sendMessage.bind(conf.trainTopic, data ),2000))
+        setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, data ),2000)
         // exit from section 5
-        setTimeout( kafkaProducer.sendMessage.bind(conf.trainTopic, enterOrExitSection((i + 1),fourSection,EXIT_ROAD)),4000)
+        setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, enterOrExitSection((i + 1),fourSection,EXIT_ROAD)),4000)
     }
 
 //enter from section two and exit from fifth section
@@ -101,15 +102,15 @@ const postTrain = () => {
 for (let i = 160; i < 200; i++) {
     //enter to section 2
     const data = enterOrExitSection((i + 1),secondSection,ENTER_ROAD);
-    setTimeout( kafkaProducer.sendMessage.bind(conf.trainTopic, data ),1000)
+    setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, data ),1000)
     //enter to section 3
     data.section = options.section[thirdSection]
-    setTimeout(( kafkaProducer.sendMessage.bind(conf.trainTopic, data ),2000))
+    setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, data ),2000)
     //enter to section 4
     data.section = options.section[fourSection]
-    setTimeout(( kafkaProducer.sendMessage.bind(conf.trainTopic, data ),3000))
+    setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, data ),3000)
     // exit from section 5
-    setTimeout( kafkaProducer.sendMessage.bind(conf.trainTopic, enterOrExitSection((i + 1),fifthSection,EXIT_ROAD)),4000)
+    setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, enterOrExitSection((i + 1),fifthSection,EXIT_ROAD)),4000)
 }
 
 
