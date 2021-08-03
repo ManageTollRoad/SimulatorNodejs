@@ -29,8 +29,6 @@ const createRandomData = (vehicleId) => {
 
 }
 
-<<<<<<< Updated upstream
-=======
 const oneToFour= (vehicleId) => {
   //enter from section one and exit from fifth section 
 
@@ -84,7 +82,6 @@ const oneToFifth = (vehicleId) => {
   
   }
 
->>>>>>> Stashed changes
 const enterOrExitSection = (vehicleId,sectionNumber,operation) => {
     const options = conf.data
     const data = {
@@ -134,11 +131,6 @@ const postTrain = () =>
         //enter to section 4
         data.section = options.section[fourSection]
         setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, data ),3000)
-<<<<<<< Updated upstream
-        
-        // exit from section 5
-        setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, enterOrExitSection((i + 1),fifthSection,EXIT_ROAD)),4000)
-=======
         //enter to section 5
         data.section = options.section[fifthSection]
         setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, data ),3500)
@@ -147,7 +139,6 @@ const postTrain = () =>
         data.type = options.type[EXIT_ROAD]
         setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, data ),4000)
        
->>>>>>> Stashed changes
     }
 
  
@@ -164,10 +155,6 @@ const postTrain = () =>
         //enter to section 3
         data.section = options.section[thirdSection]
         setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, data ),2000)
-<<<<<<< Updated upstream
-        // exit from section 5
-        setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, enterOrExitSection((i + 1),fourSection,EXIT_ROAD)),4000)
-=======
        //enter to section 4
        data.section = options.section[fourSection]
        setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, data ),2500)
@@ -175,7 +162,6 @@ const postTrain = () =>
        data.type = options.type[EXIT_ROAD]
        setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, data ),4000)
         
->>>>>>> Stashed changes
     }
 
 //enter from section two and exit from fifth section
@@ -190,10 +176,6 @@ for (let i = 160; i < 200; i++) {
     //enter to section 4
     data.section = options.section[fourSection]
     setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, data ),3000)
-<<<<<<< Updated upstream
-    // exit from section 5
-    setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, enterOrExitSection((i + 1),fifthSection,EXIT_ROAD)),4000)
-=======
     //enter to section 5
     data.section = options.section[fifthSection]
     setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, data ),3500)
@@ -201,7 +183,6 @@ for (let i = 160; i < 200; i++) {
     // exit from section 5
     data.type = options.type[EXIT_ROAD]
     setTimeout( kafkaProducer.sendMessage.bind(kafkaProducer,conf.trainTopic, data ),4000)
->>>>>>> Stashed changes
 }
 
 
