@@ -107,7 +107,7 @@ const postData = () => {
     for (let i = 0; i < 80; i++) {
         if(Math.floor(Math.random() < 0.8)){
             oneToFifth(i)
-            oneToFour(i)
+            oneToFour(i+80)
         }
         
     }
